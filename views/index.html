@@ -11,7 +11,9 @@
   <button id="btn">发送请求</button>
   <script>
     $('#btn').click(() => {
-      $.post($('#val').val(),function(data) {
+      $.post($('#val').val(),{
+        name: 'xyf',
+      },function(data) {
         console.log(data)
       })
     })

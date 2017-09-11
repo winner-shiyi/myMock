@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var cors = require('cors');
 var axios = require('axios')
+var querystring = require('querystring')
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -41,11 +42,16 @@ app.use('/', index);
 app.use('/users', users);
 
 
-// catch 404 and forward to error handler
+// 如果请求出现错误就把请求代理到其他环境,假如代理环境也报错则抛出错误
 app.use(function(req, res, next) {
-  // 如果请求出现错误就把请求代理到其他环境,假如代理环境也报错则抛出错误
-  const url = `http://127.0.0.1:8088${req.url}`
-  axios[req.method.toLowerCase()](url).then((response) => {
+  // 把请求头、请求参数也一起代理过去
+  const {headers, body, url, method} = req
+
+  axios[method.toLowerCase()](
+    `http://127.0.0.1:8088${url}`,
+    querystring.stringify(body),
+    { headers }
+  ).then((response) => {
     res.json(response.data)
   }).catch((e) => {
     var err = new Error('Not Found');
