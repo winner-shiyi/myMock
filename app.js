@@ -3,12 +3,13 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var process = require('process')
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var cors = require('cors');
 var axios = require('axios')
 var querystring = require('querystring')
-
+var proxyConfig = require('./proxy.config')
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -46,7 +47,7 @@ app.use('/users', users);
 app.use(function(req, res, next) {
   // 把请求头、请求参数也一起代理过去
   const {headers, method} = req
-  const url = `http://127.0.0.1:8088${req.url}`
+  const url = `${proxyConfig.proxy.url}${req.url}`
   const param = querystring.stringify(req.body)
 
   axios[method.toLowerCase()](url, param,{ headers }).then((response) => {

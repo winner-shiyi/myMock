@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "cross-env NODE_ENV=development nodemon ./bin/www"
   },
   "author": "weina",
   "dependencies": {
@@ -19,6 +19,7 @@
     "axios": "^0.16.2",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
+    "cross-env": "^5.0.5",
     "ejs": "^2.5.7",
     "mockjs": "^1.0.1-beta3"
   }
