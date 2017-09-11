@@ -63,6 +63,10 @@ router.post('/login', function(req, res, next) {
  * 更多mock规则请查看 mock.js官网 http://mockjs.com/
  */
 router.get('/', function(req, res, next) {
+  var template = {
+    'key|1-10': '★'
+  }
+  Mock.toJSONSchema(template)
   const data = Mock.mock({
       // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
       'list|1-10': [{
@@ -79,20 +83,20 @@ router.get('/', function(req, res, next) {
 /**
  * 第四个示例：在实际项目中 配合mock.js 模拟post请求
  */
-router.get('/order/list', function(req, res, next) {
+router.post('/order/list', function(req, res, next) {
   const sendParams = req.body;
   const mock = null;
   console.log('sendParams', sendParams); //可以在控制台看到我们传给后端的参数
   const mockData = Mock.mock({
-    "total": 1,
-    "list|10": [
+    "total": 20, // 模拟20条数据
+    "list|20": [ // 模拟20条数据
 		  {
-        "orderNo|10": '123456',
+        "orderNo": /\d\w{5,10}/, // 因为用订单号作为table每行的key了，记得不能是一样的值
         "address": "发货地址111",
-        "orderStatus": 1,
+        "orderStatus|1-6": 1, // 如果约定的格式是字符串的话，使用正则/^[1-6]$/
         "driverName": "司机嘟嘟",
         "driverPhone": "13612541414",
-        "phone": "发货15880274595",
+        "phone": "15880274595",
         "orderTime":"1503540843000",
         "receiversInfoList": [
           {
@@ -108,23 +112,22 @@ router.get('/order/list', function(req, res, next) {
         ]
 		  }
     ],
-    "pageNo": 1,
-	  "pageSize": 10
+    "pageNo": "1",
+	  "pageSize": "10"
   });
-  // setTimeout(() => {
+  // 第五个示例：模拟网速慢，loading的展示效果 加一个setTimeout
+  // 第六个示例：模拟请求失败 修改resultCode状态码
+  // setTimeout(() => { 
     //返回结果给ajax
     res.send({
-      'resultCode': '0',
-      resultData: mockData,
+      "resultCode": "0",
+      "resultData": mockData,
       "resultDesc": "小姐姐，你又出bug啦"
     });
     //关闭请求
     res.end();
   // }, 3000)
 });
-
-
-
 
 
 
