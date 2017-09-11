@@ -9,22 +9,10 @@ const Mock = require('mockjs');
  * 打开本地接口地址查看
  */
 router.get('/mock', function(req, res, next) {
-  //req.body：获取ajax请求参数
-  const sendParams = req.body;
-  let data = null;
-
-  if (!sendParams.id) {
-    data = {
-      "resultCode": '-1',
-      "resultData": {},
-      "resultDesc": "请求参数中缺少id"
-    };
-  } else {
-    data = {
-      "resultCode": '0',
-      "resultData": {"id": "这是第一个示例返回"},
-      "resultDesc": "get请求成功"
-    };
+  const data = {
+    "resultCode": '0',
+    "resultData": {"id": "这是第一个示例返回"},
+    "resultDesc": "get请求成功"
   };
 
   //如果需要，也可以设置响应头
@@ -62,28 +50,24 @@ router.post('/login', function(req, res, next) {
  * 打开本地接口地址查看
  * 更多mock规则请查看 mock.js官网 http://mockjs.com/
  */
-router.get('/', function(req, res, next) {
-  var template = {
-    'key|1-10': '★'
-  }
-  Mock.toJSONSchema(template)
+router.get('/random', function(req, res, next) {
   const data = Mock.mock({
       // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
       'list|1-10': [{
           // 属性 id 是一个自增数，起始值为 1，每次增 1
-          'id|+1': 1
+          'id|+1': 1,
+          'star|1-10': '★'
       }]
-  })
-  res.render('index', { 
-    title: 'Express',
-    // 在输出结果
-    data: JSON.stringify(data, null, 4)
   });
+  //返回结果给ajax
+  res.send(data);
+  //关闭请求
+  res.end();
 });
 /**
  * 第四个示例：在实际项目中 配合mock.js 模拟post请求
  */
-router.post('/order/list', function(req, res, next) {
+router.get('/order/list', function(req, res, next) {
   const sendParams = req.body;
   const mock = null;
   console.log('sendParams', sendParams); //可以在控制台看到我们传给后端的参数
