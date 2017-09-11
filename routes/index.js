@@ -12,12 +12,13 @@ router.get('/', function(req, res, next) {
           'id|+1': 1
       }]
   })
-  res.render('index', { 
+  res.render('index', {
     title: 'Express',
     // 在输出结果
     data: JSON.stringify(data, null, 4)
   });
 });
+
 
 
 /* 第一个示例：模拟get请求接口返回数据 */
@@ -42,7 +43,7 @@ router.get('/mock', function(req, res, next) {
 
   //如果需要，也可以设置响应头
   res.set({
-      'Cache-Control' : 'public, max-age=60' 
+      'Cache-Control' : 'public, max-age=60'
   });
 
   //返回结果给ajax
