@@ -7,13 +7,15 @@
 var app = require('../app');
 var debug = require('debug')('mymock:server');
 var http = require('http');
-
+var chalk = require('chalk')
+var ora = require('ora');
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '8888');
 app.set('port', port);
+var spinner = ora().start();
 
 /**
  * Create HTTP server.
@@ -29,6 +31,7 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
+spinner.succeed(chalk.green(`open browser: 127.0.0.1:${process.env.PORT || 8888}`))
 /**
  * Normalize a port into a number, string, or false.
  */

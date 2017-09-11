@@ -17,10 +17,12 @@
   },
   "devDependencies": {
     "axios": "^0.16.2",
+    "chalk": "^2.1.0",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
     "cross-env": "^5.0.5",
     "ejs": "^2.5.7",
-    "mockjs": "^1.0.1-beta3"
+    "mockjs": "^1.0.1-beta3",
+    "ora": "^1.3.0"
   }
 }
