@@ -16,8 +16,10 @@
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
+    "axios": "^0.16.2",
     "cookie-parser": "^1.4.3",
     "cors": "^2.8.4",
+    "ejs": "^2.5.7",
     "mockjs": "^1.0.1-beta3"
   }
 }

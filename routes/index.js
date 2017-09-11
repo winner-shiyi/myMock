@@ -20,9 +20,8 @@ router.get('/', function(req, res, next) {
 });
 
 
-
 /* 第一个示例：模拟get请求接口返回数据 */
-router.get('/mock', function(req, res, next) {
+router.post('/mock', function(req, res, next) {
   //req.body：获取ajax请求参数
   const sendParams = req.body;
   let data = null;
@@ -109,8 +108,5 @@ router.post('/order/list', function(req, res, next) {
     res.end();
   // }, 3000)
 });
-
-
-
 
 module.exports = router;

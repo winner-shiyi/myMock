@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vue-slot学习笔记</title>
+	<meta name="viewport" content="width=decive-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<script type="text/javascript" src="http://static.5755.com/script/dist/lib/jquery.seajs.js"></script>
+</head>
+<body>
+  <%= title %>
+  <input type="text" id="val" value="">
+  <button id="btn">发送请求</button>
+  <script>
+    $('#btn').click(() => {
+      $.post($('#val').val(),function(data) {
+        console.log(data)
+      })
+    })
+  </script>
+</body>
+</html>
