@@ -45,13 +45,11 @@ app.use('/users', users);
 // 如果请求出现错误就把请求代理到其他环境,假如代理环境也报错则抛出错误
 app.use(function(req, res, next) {
   // 把请求头、请求参数也一起代理过去
-  const {headers, body, url, method} = req
+  const {headers, method} = req
+  const url = `http://127.0.0.1:8088${req.url}`
+  const param = querystring.stringify(req.body)
 
-  axios[method.toLowerCase()](
-    `http://127.0.0.1:8088${url}`,
-    querystring.stringify(body),
-    { headers }
-  ).then((response) => {
+  axios[method.toLowerCase()](url, param,{ headers }).then((response) => {
     res.json(response.data)
   }).catch((e) => {
     var err = new Error('Not Found');
