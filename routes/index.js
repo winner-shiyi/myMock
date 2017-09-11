@@ -112,8 +112,8 @@ router.post('/order/list', function(req, res, next) {
         ]
 		  }
     ],
-    "pageNo": "1",
-	  "pageSize": "10"
+    "pageNo": 1,
+	  "pageSize": 10
   });
   // 第五个示例：模拟网速慢，loading的展示效果 加一个setTimeout
   // 第六个示例：模拟请求失败 修改resultCode状态码
