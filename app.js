@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
-var cors = require('cors');
+var cors = require('cors'); // 使用cors跨域
 
 var app = express();
 app.use(cookieParser());

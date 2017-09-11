@@ -3,7 +3,65 @@ const router = express.Router();
 // 使用 Mock
 const Mock = require('mockjs');
 
-/* GET home page. */
+/**
+ * 第一个示例：在本地 感受一下模拟get请求
+ * 安装插件jsonView
+ * 打开本地接口地址查看
+ */
+router.get('/mock', function(req, res, next) {
+  //req.body：获取ajax请求参数
+  const sendParams = req.body;
+  let data = null;
+
+  if (!sendParams.id) {
+    data = {
+      "resultCode": '-1',
+      "resultData": {},
+      "resultDesc": "请求参数中缺少id"
+    };
+  } else {
+    data = {
+      "resultCode": '0',
+      "resultData": {"id": "这是第一个示例返回"},
+      "resultDesc": "get请求成功"
+    };
+  };
+
+  //如果需要，也可以设置响应头
+  res.set({
+      'Cache-Control' : 'public, max-age=60' 
+  });
+  //返回结果给ajax
+  res.send(data);
+  //关闭请求
+  res.end();
+});
+
+/**
+ * 第二个示例：在实际项目中 模拟post请求
+ * 如何配置跨域 通过cors
+ * 如何查看请求参数params
+ */
+router.post('/login', function(req, res, next) {
+  // req.body：获取ajax请求参数
+  const sendParams = req.body;
+  // 可以在控制台看到我们传给后端的参数
+  console.log(sendParams);
+  //返回结果给ajax
+	res.send({
+		"resultCode": '0',
+		"resultData": {},
+		"resultDesc": "恭喜小姐姐，登录成功咯~~"
+	});
+	//关闭请求
+	res.end();
+});
+
+/**
+ * 第三个示例：引入mock.js 在本地 模拟一个get请求
+ * 打开本地接口地址查看
+ * 更多mock规则请查看 mock.js官网 http://mockjs.com/
+ */
 router.get('/', function(req, res, next) {
   const data = Mock.mock({
       // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
@@ -18,62 +76,18 @@ router.get('/', function(req, res, next) {
     data: JSON.stringify(data, null, 4)
   });
 });
-
-
-/* 第一个示例：模拟get请求接口返回数据 */
-router.get('/mock', function(req, res, next) {
-  //req.body：获取ajax请求参数
-  const sendParams = req.body;
-  let data = null;
-
-  if (!sendParams.id) {
-    data = {
-      'resultCode': '-1',
-      "resultData": {},
-      "resultDesc": "请求参数中缺少id"
-    };
-  } else {
-    data = {
-      'resultCode': '0',
-      "resultData": {"id": "这是第一个示例返回"},
-      "resultDesc": "get请求成功"
-    };
-  };
-
-  //如果需要，也可以设置响应头
-  res.set({
-      'Cache-Control' : 'public, max-age=60' 
-  });
-
-  //返回结果给ajax
-  res.send(data);
-  //关闭请求
-  res.end();
-});
-
-/* 第二个示例：模拟post请求接口返回数据 */
-router.post('/login', function(req, res, next) {
-  const sendParams = req.body;
-  console.log(sendParams) //可以在控制台看到我们传给后端的参数
-  //返回结果给ajax
-	res.send({
-		'resultCode': '0',
-		resultData: {},
-		"resultDesc": "小姐姐，你登录失败啦"
-	});
-	//关闭请求
-	res.end();
-});
-/* 第三个示例：配合mockjs模拟post请求接口返回数据 */
-router.post('/order/list', function(req, res, next) {
+/**
+ * 第四个示例：在实际项目中 配合mock.js 模拟post请求
+ */
+router.get('/order/list', function(req, res, next) {
   const sendParams = req.body;
   const mock = null;
   console.log('sendParams', sendParams); //可以在控制台看到我们传给后端的参数
   const mockData = Mock.mock({
     "total": 1,
-    "list": [
+    "list|10": [
 		  {
-        "orderNo": "123456",
+        "orderNo|10": '123456',
         "address": "发货地址111",
         "orderStatus": 1,
         "driverName": "司机嘟嘟",
@@ -92,7 +106,7 @@ router.post('/order/list', function(req, res, next) {
             "shopName": "大食堂"
           }
         ]
-		  },
+		  }
     ],
     "pageNo": 1,
 	  "pageSize": 10
@@ -108,6 +122,8 @@ router.post('/order/list', function(req, res, next) {
     res.end();
   // }, 3000)
 });
+
+
 
 
 
