@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 // 使用 Mock
 const Mock = require('mockjs');
-
+// 首页的路由
 router.get('/', function(req, res, next) {
   const data = Mock.mock({
       // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
 
 /**
  * 第一个示例：在本地 感受一下模拟get请求
- * 安装插件jsonView
+ * 安装插件json Viewr
  * 打开本地接口地址查看
  */
 router.get('/mock', function(req, res, next) {
