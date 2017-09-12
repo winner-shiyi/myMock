@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Mock = require('mockjs');// 使用 Mock
 
-
-
 /**
  * GET home page
  * 首页路由，不能删掉，否则启动项目的时候会报错
@@ -61,11 +59,11 @@ router.post('/login', function(req, res, next) {
  */
 router.get('/random', function(req, res, next) {
   const data = Mock.mock({
-      // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
-      'list|1-10': [{
-          // 属性 id 是一个自增数，起始值为 1，每次增 1
-          'id|+1': 1,
-          'star|1-10': '★'
+      // 属性list的值是一个数组 其中含有1到10个元素
+      "list|1-10": [{
+          // 属性id是一个自增数 起始值为 1 每次增 1
+          "id|+1": 1,
+          "star|1-10": '★'
       }]
   });
   //返回结果给ajax
@@ -73,6 +71,7 @@ router.get('/random', function(req, res, next) {
   //关闭请求
   res.end();
 });
+
 /**
  * 第四个示例：在实际项目中 配合mock.js 模拟post请求
  */
@@ -110,6 +109,7 @@ router.post('/order/list', function(req, res, next) {
   });
   // 第五个示例：模拟网速慢，loading的展示效果 加一个setTimeout
   // 第六个示例：模拟请求失败 修改resultCode状态码
+
   // setTimeout(() => {
     //返回结果给ajax
     res.send({
