@@ -3,6 +3,21 @@ const router = express.Router();
 // 使用 Mock
 const Mock = require('mockjs');
 
+router.get('/', function(req, res, next) {
+  const data = Mock.mock({
+      // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
+      'list|1-10': [{
+          // 属性 id 是一个自增数，起始值为 1，每次增 1
+          'id|+1': 1
+      }]
+  })
+  res.render('index', {
+    title: 'Express',
+    // 在输出结果
+    data: JSON.stringify(data, null, 4)
+  });
+});
+
 /**
  * 第一个示例：在本地 感受一下模拟get请求
  * 安装插件jsonView
@@ -17,7 +32,7 @@ router.get('/mock', function(req, res, next) {
 
   //如果需要，也可以设置响应头
   res.set({
-      'Cache-Control' : 'public, max-age=60' 
+      'Cache-Control' : 'public, max-age=60'
   });
   //返回结果给ajax
   res.send(data);
@@ -101,7 +116,7 @@ router.get('/order/list', function(req, res, next) {
   });
   // 第五个示例：模拟网速慢，loading的展示效果 加一个setTimeout
   // 第六个示例：模拟请求失败 修改resultCode状态码
-  // setTimeout(() => { 
+  // setTimeout(() => {
     //返回结果给ajax
     res.send({
       "resultCode": "0",
