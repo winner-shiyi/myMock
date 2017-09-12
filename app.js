@@ -43,7 +43,7 @@ app.use('/', index);
 app.use('/users', users);
 
 
-// 如果请求出现错误就把请求代理到其他环境,假如代理环境也报错则抛出错误
+// 如果请求出现错误就把请求转发到其他环境,假如转发环境也报错则抛出错误
 app.use(function(req, res, next) {
   // 把请求头、请求参数也一起代理过去
   const {headers, method} = req
