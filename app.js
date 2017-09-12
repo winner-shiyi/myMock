@@ -11,6 +11,7 @@ var querystring = require('querystring')
 var proxyConfig = require('./proxy.config')
 var index = require('./routes/index');
 var users = require('./routes/users');
+var chalk = require('chalk')
 
 var app = express();
 app.use(cookieParser());
@@ -49,6 +50,11 @@ app.use(function(req, res, next) {
   const {headers, method} = req
   const url = `${proxyConfig.proxy.url}${req.url}`
   const param = querystring.stringify(req.body)
+
+  // tip、prev没写在一起是因为console.log提示会有错乱问题
+  const tip = chalk.red(`${url}`)
+  const prev = chalk.red('接口转发至：')
+  console.log(prev, tip)
 
   axios[method.toLowerCase()](url, param,{ headers }).then((response) => {
     res.json(response.data)
