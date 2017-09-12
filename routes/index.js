@@ -22,19 +22,19 @@ router.get('/mock', function(req, res, next) {
     "resultDesc": "get请求成功"
   };
 
-  //如果需要，也可以设置响应头
+  // 如果需要，也可以设置响应头
   res.set({
       'Cache-Control' : 'public, max-age=60'
   });
-  //返回结果给ajax
+  // 返回结果给ajax
   res.send(data);
-  //关闭请求
+  // 关闭请求
   res.end();
 });
 
 /**
  * 第二个示例：在实际项目中 模拟post请求
- * 如何配置跨域 通过cors
+ * 如何配置跨域 通过cors模块
  * 如何查看请求参数params
  */
 router.post('/login', function(req, res, next) {
@@ -42,13 +42,13 @@ router.post('/login', function(req, res, next) {
   const sendParams = req.body;
   // 可以在控制台看到我们传给后端的参数
   console.log('sendParams', sendParams);
-  //返回结果给ajax
+  // 返回结果给ajax
 	res.send({
 		"resultCode": '0',
 		"resultData": {},
 		"resultDesc": "恭喜小姐姐，登录成功咯~~"
 	});
-	//关闭请求
+	// 关闭请求
 	res.end();
 });
 
@@ -66,9 +66,9 @@ router.get('/random', function(req, res, next) {
           "star|1-10": '★'
       }]
   });
-  //返回结果给ajax
+  // 返回结果给ajax
   res.send(data);
-  //关闭请求
+  // 关闭请求
   res.end();
 });
 
@@ -111,13 +111,13 @@ router.post('/order/list', function(req, res, next) {
   // 第六个示例：模拟请求失败 修改resultCode状态码
 
   // setTimeout(() => {
-    //返回结果给ajax
+    // 返回结果给ajax
     res.send({
       "resultCode": "0",
       "resultData": mockData,
       "resultDesc": "小姐姐，你又出bug啦"
     });
-    //关闭请求
+    // 关闭请求
     res.end();
   // }, 3000)
 });
