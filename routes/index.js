@@ -1,21 +1,15 @@
 const express = require('express');
 const router = express.Router();
-// 使用 Mock
-const Mock = require('mockjs');
-// 首页的路由
+const Mock = require('mockjs');// 使用 Mock
+
+
+
+/**
+ * GET home page
+ * 首页路由，不能删掉，否则启动项目的时候会报错
+ */
 router.get('/', function(req, res, next) {
-  const data = Mock.mock({
-      // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
-      'list|1-10': [{
-          // 属性 id 是一个自增数，起始值为 1，每次增 1
-          'id|+1': 1
-      }]
-  })
-  res.render('index', {
-    title: 'Express',
-    // 在输出结果
-    data: JSON.stringify(data, null, 4)
-  });
+  res.render('index', { title: 'Express' });
 });
 
 /**
@@ -49,7 +43,7 @@ router.post('/login', function(req, res, next) {
   // req.body：获取ajax请求参数
   const sendParams = req.body;
   // 可以在控制台看到我们传给后端的参数
-  console.log(sendParams);
+  console.log('sendParams', sendParams);
   //返回结果给ajax
 	res.send({
 		"resultCode": '0',
@@ -82,7 +76,7 @@ router.get('/random', function(req, res, next) {
 /**
  * 第四个示例：在实际项目中 配合mock.js 模拟post请求
  */
-router.get('/order/list', function(req, res, next) {
+router.post('/order/list', function(req, res, next) {
   const sendParams = req.body;
   const mock = null;
   console.log('sendParams', sendParams); //可以在控制台看到我们传给后端的参数
