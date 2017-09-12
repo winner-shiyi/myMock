@@ -53,7 +53,7 @@ app.use(function(req, res, next) {
 
   // tip、prev没写在一起是因为console.log提示会有错乱问题
   const tip = chalk.red(`${url}`)
-  const prev = chalk.red('接口转发至：')
+  const prev = chalk.red(`${method}方式把接口转发至：`)
   console.log(prev, tip)
 
   axios[method.toLowerCase()](url, param,{ headers }).then((response) => {

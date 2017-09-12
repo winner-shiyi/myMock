@@ -4,7 +4,7 @@
 
 module.exports = {
   apiAddress: {
-    development: '//http:tubobo-consignor.dev.ops.com',
+    development: 'http://tubobo-consignor.dev.ops.com',
     develo: '//172.16.1.181:8021',
     test: '//172.16.1.180:8014',
     uat: '//consingnoruat.toobob.com/',
