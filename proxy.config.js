@@ -6,6 +6,6 @@ const constants = require('./api.address')
 
 module.exports = {
   proxy: {
-    'url': constants.apiAddress.development,
+    'url': constants.apiAddress.online,
   },
 }

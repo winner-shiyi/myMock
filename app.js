@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 var cors = require('cors');
 var axios = require('axios');
-var querystring = require('querystring')
 var proxyConfig = require('./proxy.config')
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -47,16 +46,19 @@ app.use('/users', users);
 // 如果请求出现错误就把请求代理到其他环境,假如代理环境也报错则抛出错误
 app.use(function(req, res, next) {
   // 把请求头、请求参数也一起代理过去
-  const {headers, method} = req
+  const { method } = req
   const url = `${proxyConfig.proxy.url}${req.url}`
-  const param = querystring.stringify(req.body)
 
   // tip、prev没写在一起是因为console.log提示会有错乱问题
   const tip = chalk.red(`${url}`)
-  const prev = chalk.red(`${method}方式把接口转发至：`)
+  const prev = chalk.red(`[${method}方式转发接口]到:`)
   console.log(prev, tip)
 
-  axios[method.toLowerCase()](url, param,{ headers }).then((response) => {
+  axios[method.toLowerCase()](url, req.body,{
+    headers: {
+      Authorization: req.headers.authorization,
+    }
+  }).then((response) => {
     res.json(response.data)
   }).catch((e) => {
     var err = new Error('Not Found');
