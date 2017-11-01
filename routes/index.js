@@ -554,9 +554,9 @@ router.post('/receiver/list', function(req, res, next) {
     "total": 10,
     "list": [
             {
-                "addressDetail": "近江时代大厦",
+                "addressDetail": "浙江省杭州市江干区近江时代大厦",
                 "createDate": "1509511418929",
-                "id": "1 查询使用",
+                "id": /\d\w{5,10}/,
                 "phone": "15880274595",
                 "receiverCode": "11 展示使用",
                 "shopName": "新白鹿庆春店",
@@ -568,7 +568,6 @@ router.post('/receiver/list', function(req, res, next) {
         "pageSize": 10,
         "total": 20
   });
-}
 
   //返回结果给ajax
   res.send({
@@ -606,8 +605,6 @@ router.post('/receiver/info', function(req, res, next) {
         "tagName": "吃货1号",
         "userName": "魏娜"
   });
-
-}
 
   //返回结果给ajax
   res.send({
@@ -734,7 +731,7 @@ router.post('/carOrder/list', function(req, res, next) {
                 "addressDetail": "浙江省杭州市江干区近江时代大厦",
                 "createDate": 1509511418929,
                 "deliveryTime": 1509511418929,
-                "id": "22345",
+                "id": /\d\w{5,10}/,
                 "orderStatus": 1,
                 "phone": "15880274595",
                 "receiver": "新白鹿庆春店",
@@ -746,7 +743,15 @@ router.post('/carOrder/list', function(req, res, next) {
         "pageSize": 10,
         "total": 20
   });
-}
+  //返回结果给ajax
+    res.send({
+      'resultCode': '0',
+      resultData: mock,
+      "resultDesc": "取消订单请求失败"
+    });
+    //关闭请求
+    res.end();
+});
 
  
 
