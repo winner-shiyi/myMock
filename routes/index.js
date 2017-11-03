@@ -515,7 +515,7 @@ router.post('/order/cardInfo', function(req, res, next) {
   res.end();
 });
 
-// v1.2----------------
+// v1.2---------------------------------------
 
 /* 提交收货商家信息*/
 router.post('/receiver/create', function(req, res, next) {
@@ -558,7 +558,7 @@ router.post('/receiver/list', function(req, res, next) {
                 "createDate": "1509511418929",
                 "id": /\d\w{5,10}/,
                 "phone": "15880274595",
-                "receiverCode": "11 展示使用",
+                "receiverCode": /\d\w{5,10}/,
                 "shopName": "新白鹿庆春店",
                 "tagName": "吃货1号",
                 "userName": "魏娜"
@@ -632,15 +632,15 @@ router.post('/tag/create', function(req, res, next) {
 
   //返回结果给ajax
   res.send({
-    'resultCode': '0',
+    'resultCode': '000',
     resultData: [],
-    "resultDesc": "新建任务请求失败咯"
+    "resultDesc": "分组名称已经存在"
   });
   //关闭请求
   res.end();
 });
 
-/* 获取收货商家分组名称*/
+/* 获取收货商家分组名称 */
 router.post('/dictionary/query', function(req, res, next) {
   var _data = req.body,
     mock = null;
@@ -693,7 +693,7 @@ router.post('/carOrder/cancel', function(req, res, next) {
 });
 
 /* 生成配载单 */
-router.post('/create/order', function(req, res, next) {
+router.post('/order/generate', function(req, res, next) {
   var _data = req.body,
     mock = null;
   if (_data.error) {
@@ -730,9 +730,20 @@ router.post('/carOrder/list', function(req, res, next) {
             {
                 "addressDetail": "浙江省杭州市江干区近江时代大厦",
                 "createDate": 1509511418929,
-                "deliveryTime": 1509511418929,
+                "deliveryTime": '2017-11-03 01:43~2017-11-03 03:43',
                 "id": /\d\w{5,10}/,
                 "orderStatus": 1,
+                "phone": "15880274595",
+                "receiver": "新白鹿庆春店",
+                "sender": "测试内容dq60",
+                "tagName": "测试内容68qs"
+            },
+            {
+                "addressDetail": "浙江省杭州市江干区近江时代大厦",
+                "createDate": 1509511418929,
+                "deliveryTime": '2017-11-03 01:43~2017-11-03 03:43',
+                "id": /\d\w{5,10}/,
+                "orderStatus": 2,
                 "phone": "15880274595",
                 "receiver": "新白鹿庆春店",
                 "sender": "测试内容dq60",
