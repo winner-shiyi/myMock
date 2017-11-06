@@ -107,7 +107,7 @@ router.post('/order/list', function(req, res, next) {
 
   mock = Mock.mock({
     "total": 10,
-    "list|10": [
+    "list|20": [
       {
             "orderNo": /\d\w{5,10}/, // 因为用订单号作为table每行的key了，记得不能是一样的值
             "address": "发货地址111",
@@ -158,7 +158,7 @@ router.post('/order/infoDetail', function(req, res, next) {
     "province":"浙江省",
     "city":"温州市",
     "area":"鹿城区",
-    "addressDetail":"好吃的",
+    "address":"好吃的",
     "drivingTime":"1503540843000",
     "phone":"15880274595",
     "receiversInfoList":[
@@ -709,7 +709,7 @@ router.post('/order/generate', function(req, res, next) {
   res.send({
     'resultCode': '0',
     resultData: mock,
-    "resultDesc": "取消订单请求失败"
+    "resultDesc": "生成配载单失败咯"
   });
   //关闭请求
   res.end();
@@ -726,33 +726,22 @@ router.post('/carOrder/list', function(req, res, next) {
 
   mock = Mock.mock({
     "total": 10,
-    "list": [
+    "list|20": [
             {
                 "addressDetail": "浙江省杭州市江干区近江时代大厦",
                 "createDate": 1509511418929,
                 "deliveryTime": '2017-11-03 01:43~2017-11-03 03:43',
-                "id": /\d\w{5,10}/,
-                "orderStatus": 1,
+                "id|+1": 1,
+                "orderStatus|": 1,
                 "phone": "15880274595",
                 "receiver": "新白鹿庆春店",
-                "sender": "测试内容dq60",
-                "tagName": "测试内容68qs"
-            },
-            {
-                "addressDetail": "浙江省杭州市江干区近江时代大厦",
-                "createDate": 1509511418929,
-                "deliveryTime": '2017-11-03 01:43~2017-11-03 03:43',
-                "id": /\d\w{5,10}/,
-                "orderStatus": 2,
-                "phone": "15880274595",
-                "receiver": "新白鹿庆春店",
-                "sender": "测试内容dq60",
-                "tagName": "测试内容68qs"
+                "sender": "发货1",
+                "tagName": "吃货1号"
             }
         ],
         "pageNo": 1,
         "pageSize": 10,
-        "total": 20
+        "total":20,
   });
   //返回结果给ajax
     res.send({
