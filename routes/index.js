@@ -592,17 +592,16 @@ router.post('/receiver/info', function(req, res, next) {
     "address": "近江时代大厦",
         "area": "江干区",
         "city": "杭州市",
-        "phone": 33378,
+        "phone": '15880274591',
         "phoneList": [
-            "string1",
-            "string2",
-            "string3",
-            "string4",
-            "string5"
+            "1111",
+            "2222",
+            "3333",
+            "4444"
         ],
         "province": "浙江省",
         "shopName": "新白鹿庆春店",
-        "tagName": "吃货1号",
+        "tagId": "3",
         "userName": "魏娜"
   });
 
@@ -652,11 +651,19 @@ router.post('/dictionary/query', function(req, res, next) {
 
   mock = Mock.mock({
     "list": [
-            {
-                "label": "吃货1号",
-                "value": "1"
-            }
-        ]
+      {
+        "label": "吃货1号",
+        "value": "1"
+      },
+      {
+        "label": "油爆虾",
+        "value": "2"
+      },
+      {
+        "label": "红烧排骨",
+        "value": "3"
+      }
+    ]
   });
 
   //返回结果给ajax
