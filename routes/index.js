@@ -760,6 +760,30 @@ router.post('/carOrder/list', function(req, res, next) {
     res.end();
 });
 
+/* 配载单详情页车辆轨迹 */
+router.post('/carOrder/path', function(req, res, next) {
+  var _data = req.body,
+    mock = null;
+  if (_data.error) {
+    notifierMsg.errorMsg(res);
+    return false;
+  }
+
+  mock = Mock.mock({
+    "list": [],
+  });
+  //返回结果给ajax
+    res.send({
+      'resultCode': '0',
+      resultData: mock,
+      "resultDesc": "取消订单请求失败"
+    });
+    //关闭请求
+    res.end();
+});
+
+
+
  
 
 
