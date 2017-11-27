@@ -775,7 +775,7 @@ router.post('/carOrder/list', function(req, res, next) {
 });
 
 /* 配载单详情页车辆轨迹 */
-router.post('/carOrder/path', function(req, res, next) {
+router.post('/carOrder/location', function(req, res, next) {
   var _data = req.body,
     mock = null;
   if (_data.error) {
