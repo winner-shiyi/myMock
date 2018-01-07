@@ -52,7 +52,8 @@ router.post('/wxcx/express/send/appoint', function(req, res, next) {
         [
           "14:00-16:00",
           "16:00-18:00"
-        ]
+        ],
+      'date':'01月16日'
     },
     "2": {
       'label':'明天',
@@ -62,7 +63,8 @@ router.post('/wxcx/express/send/appoint', function(req, res, next) {
           "12:00-14:00",
           "14:00-16:00",
           "16:00-18:00"
-        ]
+        ],
+      'date':'01月17日'
     },
     "3": {
       'label':'后天',
@@ -72,7 +74,19 @@ router.post('/wxcx/express/send/appoint', function(req, res, next) {
           "12:00-14:00",
           "14:00-16:00",
           "16:00-18:00"
-        ]
+        ],
+      'date':'01月18日'
+    },
+    "4": {
+      'label':'大后天',
+      'value':
+        [
+          "10:00-12:00",
+          "12:00-14:00",
+          "14:00-16:00",
+          "16:00-18:00"
+        ],
+      'date':'01月19日'
     }
     
   });
