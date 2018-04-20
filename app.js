@@ -17,7 +17,8 @@ app.use(cookieParser());
 //配置跨域
 app.use(cors({
     //允许这个域的访问
-    origin: ["http://localhost:8081"],
+    // origin: ["http://localhost:8081"],
+    origin: ["*"],
     //只允许GET和POST请求
     methods: ['GET', 'POST'],
     //只允许带这两种请求头的链接访问,可以不设置这个

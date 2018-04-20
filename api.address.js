@@ -10,8 +10,7 @@ module.exports = {
     uat: '//consingnoruat.toobob.com/',
     production: '//consignor.toobob.com',
     devRemote: '//tubobo-consignor.dev.ops.com',
-    ouyang: '//172.16.14.110:8080/tubobo-express',
-    localhost: 'http://127.0.0.1:3737',
+    localhost: 'http://127.0.0.1:8888',
     online: 'http://consignor.toobob.com',
   }
 }

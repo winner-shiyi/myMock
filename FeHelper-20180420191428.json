@@ -1,0 +1,85 @@
+/* http://172.16.2.71:8068/mockjsdata/116/spuDetail */
+{
+    "resultCode": "0",
+    "resultDesc": "测试内容16c3",
+    "resultData": {
+        "subTitle": "肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润肉脆多汁 香甜水润",
+        "detailImageList": [
+            "http://res.neosjyx.com/resource/images/wechat/7043/editor/20180326102326281144.jpg",
+            "http://res.neosjyx.com/resource/images/wechat/7043/editor/20180326102327031389.jpg",
+            "http://res.neosjyx.com/resource/images/wechat/7043/editor/20180326102507628522.jpg"
+        ],
+        "specList": [
+            {
+                "specName": "重量",
+                "specId": "450000201301152580",
+                "valueList": [
+                    {
+                        "specValue": "8只装"
+                    }
+                ]
+            }
+        ],
+        "goodsDetails": [
+            {
+                "key": "产地",
+                "value": "杭州"
+            },
+            {
+                "key": "产地",
+                "value": "杭州"
+            },
+            {
+                "key": "产地",
+                "value": "杭州"
+            },
+            {
+                "key": "产地",
+                "value": "杭州"
+            },
+            {
+                "key": "产地",
+                "value": "杭州"
+            }
+        ],
+        "spuId": "320000200309088655",
+        "shop": {
+            "shopId": "540000197208288742",
+            "shopName": "四季严选勾庄店"
+        },
+        "headImageList": [
+            "http://res.neosjyx.com/resource/images/photo/7043/20180326/201803261017392.jpg",
+            "http://res.neosjyx.com/resource/images/photo/7043/20180326/201803261017393.jpg"
+        ],
+        "sellingPrices": [
+            28.9
+        ],
+        "skuList": [
+            {
+                "sellingPrice": 28.9,
+                "quantity": 11,
+                "specList": [
+                    {
+                        "specId": "440000198603015243",
+                        "specValue": "8只装",
+                        "specName": "重量"
+                    },
+                    {
+                        "specId": "650000200701301576",
+                        "specValue": "8只装",
+                        "specName": "重量"
+                    },
+                    {
+                        "specId": "130000200703317131",
+                        "specValue": "8只装",
+                        "specName": "重量"
+                    }
+                ],
+                "skuId": "44000020110702433X",
+                "specImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
+            }
+        ],
+        "spuName": "湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒",
+        "saleStatus": "0"
+    }
+}
