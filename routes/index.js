@@ -164,7 +164,7 @@ router.post('/spuDetail', function(req, res, next) {
               "specId": "450000201301152580",
               "valueList": [
                   {
-                      "specValue": "8只装"
+                      "specValue": "8只装",
                   },
                   {
                     "specValue": "16只装"
@@ -221,7 +221,7 @@ router.post('/spuDetail', function(req, res, next) {
       ],
       "skuList": [
           {
-              "sellingPrice": 28.9,
+              "sellingPrice": 10,
               "quantity": 0,
               "specList": [
                   {
@@ -236,10 +236,11 @@ router.post('/spuDetail', function(req, res, next) {
                   }
               ],
               "skuId": "skuId1",
+              "skuDesc": "8只装,红色",
               "specImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
           },
           {
-            "sellingPrice": 28.9,
+            "sellingPrice": 20,
             "quantity": 10,
             "specList": [
                 {
@@ -254,10 +255,11 @@ router.post('/spuDetail', function(req, res, next) {
                 }
             ],
             "skuId": "skuId2",
+            "skuDesc": "16只装,红色",
             "specImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
           },
           {
-            "sellingPrice": 28.9,
+            "sellingPrice": 30,
             "quantity": 0,
             "specList": [
                 {
@@ -272,10 +274,11 @@ router.post('/spuDetail', function(req, res, next) {
                 }
             ],
             "skuId": "skuId3",
+            "skuDesc": "8只装,黑色",
             "specImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
           },
           {
-            "sellingPrice": 28.9,
+            "sellingPrice": 40,
             "quantity": 10,
             "specList": [
                 {
@@ -290,6 +293,7 @@ router.post('/spuDetail', function(req, res, next) {
                 }
             ],
             "skuId": "skuId4",
+            "skuDesc": "16只装,黑色",
             "specImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
           }
 
