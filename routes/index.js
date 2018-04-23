@@ -11,135 +11,135 @@ router.get('/', function(req, res, next) {
 });
 
 /* 提交收货商家信息*/
-router.post('/receiver/create', function(req, res, next) {
-  var _data = req.body,
-    mock = null;
-  // console.log(_data) //可以在控制台看到我们传给后端的参数
-  if (_data.error) {
-    // notifierMsg.errorMsg(res);
-    return false;
-  }
+// router.post('/receiver/create', function(req, res, next) {
+//   var _data = req.body,
+//     mock = null;
+//   // console.log(_data) //可以在控制台看到我们传给后端的参数
+//   if (_data.error) {
+//     // notifierMsg.errorMsg(res);
+//     return false;
+//   }
 
-  mock = Mock.mock({
+//   mock = Mock.mock({
 
-  });
+//   });
 
-  //返回结果给ajax
-  res.send({
-    'resultCode': '0',
-    resultData: [],
-    "resultDesc": "新建任务请求失败咯"
-  });
-  //关闭请求
-  res.end();
-});
+//   //返回结果给ajax
+//   res.send({
+//     'resultCode': '0',
+//     resultData: [],
+//     "resultDesc": "新建任务请求失败咯"
+//   });
+//   //关闭请求
+//   res.end();
+// });
 
 // 小程序---------------------------------------
 /* 我要寄件-预约时间段*/
-router.post('/common/queryTimespan', function(req, res, next) {
-  var _data = req.body,
-    mock = null;
-  // console.log(_data) //可以在控制台看到我们传给后端的参数
-  if (_data.error) {
-    // notifierMsg.errorMsg(res);
-    return false;
-  }
+// router.post('/common/queryTimespan', function(req, res, next) {
+//   var _data = req.body,
+//     mock = null;
+//   // console.log(_data) //可以在控制台看到我们传给后端的参数
+//   if (_data.error) {
+//     // notifierMsg.errorMsg(res);
+//     return false;
+//   }
 
-  mock = Mock.mock({
-    "1": {
-      'label':'今天',
-      'value':
-        [
-          "14:00-16:00",
-          "16:00-18:00"
-        ],
-      'currentTime':1516072459233
-    },
-    "2": {
-      'label':'明天',
-      'value':
-        [
-          "10:00-12:00",
-          "12:00-14:00",
-          "14:00-16:00",
-          "16:00-18:00"
-        ],
-      'currentTime':1516118400000
-    },
-    "3": {
-      'label':'后天',
-      'value':
-        [
-          "10:00-12:00",
-          "12:00-14:00",
-          "14:00-16:00",
-          "16:00-18:00"
-        ],
-      'currentTime':1516204800000
-    }
-  });
+//   mock = Mock.mock({
+//     "1": {
+//       'label':'今天',
+//       'value':
+//         [
+//           "14:00-16:00",
+//           "16:00-18:00"
+//         ],
+//       'currentTime':1516072459233
+//     },
+//     "2": {
+//       'label':'明天',
+//       'value':
+//         [
+//           "10:00-12:00",
+//           "12:00-14:00",
+//           "14:00-16:00",
+//           "16:00-18:00"
+//         ],
+//       'currentTime':1516118400000
+//     },
+//     "3": {
+//       'label':'后天',
+//       'value':
+//         [
+//           "10:00-12:00",
+//           "12:00-14:00",
+//           "14:00-16:00",
+//           "16:00-18:00"
+//         ],
+//       'currentTime':1516204800000
+//     }
+//   });
 
-  //返回结果给ajax
-  res.send({
-    'resultCode': '0',
-    resultData: mock,
-    "resultDesc": "新建任务请求失败咯"
-  });
-  //关闭请求
-  res.end();
-});
+//   //返回结果给ajax
+//   res.send({
+//     'resultCode': '0',
+//     resultData: mock,
+//     "resultDesc": "新建任务请求失败咯"
+//   });
+//   //关闭请求
+//   res.end();
+// });
 
 
 /* 快递订单列表 */
-router.post('/wxcx/express/receive/list', function(req, res, next) {
-  var _data = req.body,
-    mock = null;
-  if (_data.error) {
-    notifierMsg.errorMsg(res);
-    return false;
-  }
+// router.post('/wxcx/express/receive/list', function(req, res, next) {
+//   var _data = req.body,
+//     mock = null;
+//   if (_data.error) {
+//     notifierMsg.errorMsg(res);
+//     return false;
+//   }
 
-  mock = Mock.mock({
-    "total": 10,
-    "list|5": [
-            {
-              "areaNum": "ABC",
-              "expressId": "440000199101155881",
-              "pickupCode": "EFG",
-              "expressCompanyName": "顺丰",
-              "riderPhone": "15880274596",
-              "distributionStatus": "PICKUP",
-              "dispatchFlag": false,
-              "waybillNo": "410000197907264185",
-              "waybillStatus": 2,
-              "distributionType": "SELF",
-              "payFlag": false,
-              "storeName": "近江店",
-              "riderName": "魏娜",
+//   mock = Mock.mock({
+//     "total": 10,
+//     "list|5": [
+//             {
+//               "areaNum": "ABC",
+//               "expressId": "440000199101155881",
+//               "pickupCode": "EFG",
+//               "expressCompanyName": "顺丰",
+//               "riderPhone": "15880274596",
+//               "distributionStatus": "PICKUP",
+//               "dispatchFlag": false,
+//               "waybillNo": "410000197907264185",
+//               "waybillStatus": 2,
+//               "distributionType": "SELF",
+//               "payFlag": false,
+//               "storeName": "近江店",
+//               "riderName": "魏娜",
 
-              // "addressDetail": "浙江省杭州市江干区近江时代大厦",
-              // "createDate": "1509511418929",
-              // "id": /\d\w{5,10}/,
-              // "phone": "15880274595",
-              // "receiverCode": /\d\w{5,10}/,
-              // "shopName": "新白鹿庆春店",
-              // "tagName": "吃货1号",
-              // "userName": "魏娜"
-            }
-        ],
-      "pageNo": 1,
-      "pageSize": 10
-  });
+//               // "addressDetail": "浙江省杭州市江干区近江时代大厦",
+//               // "createDate": "1509511418929",
+//               // "id": /\d\w{5,10}/,
+//               // "phone": "15880274595",
+//               // "receiverCode": /\d\w{5,10}/,
+//               // "shopName": "新白鹿庆春店",
+//               // "tagName": "吃货1号",
+//               // "userName": "魏娜"
+//             }
+//         ],
+//       "pageNo": 1,
+//       "pageSize": 10
+//   });
 
-  //返回结果给ajax
-  res.send({
-    'resultCode': '0',
-    resultData: mock,
-    "resultDesc": "任务列表页失败咯"
-  });
-  //关闭请求
-  res.end();
-});
+//   //返回结果给ajax
+//   res.send({
+//     'resultCode': '0',
+//     resultData: mock,
+//     "resultDesc": "任务列表页失败咯"
+//   });
+//   //关闭请求
+//   res.end();
+// });
 
 /* 商家详情 */
 router.post('/spuDetail', function(req, res, next) {
@@ -183,7 +183,6 @@ router.post('/spuDetail', function(req, res, next) {
                 }
             ]
         }
-
       ],
       "goodsDetails": [
           {
@@ -237,7 +236,7 @@ router.post('/spuDetail', function(req, res, next) {
               ],
               "skuId": "skuId1",
               "skuDesc": "8只装,红色",
-              "specImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
+              "skuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
           },
           {
             "sellingPrice": 20,
@@ -256,7 +255,7 @@ router.post('/spuDetail', function(req, res, next) {
             ],
             "skuId": "skuId2",
             "skuDesc": "16只装,红色",
-            "specImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
+            "skuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180326/201803261017392.jpg"
           },
           {
             "sellingPrice": 30,
@@ -275,7 +274,7 @@ router.post('/spuDetail', function(req, res, next) {
             ],
             "skuId": "skuId3",
             "skuDesc": "8只装,黑色",
-            "specImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
+            "skuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180326/201803261017393.jpg"
           },
           {
             "sellingPrice": 40,
@@ -294,7 +293,7 @@ router.post('/spuDetail', function(req, res, next) {
             ],
             "skuId": "skuId4",
             "skuDesc": "16只装,黑色",
-            "specImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
+            "skuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
           }
 
       ],
@@ -308,6 +307,50 @@ router.post('/spuDetail', function(req, res, next) {
     'resultCode':'0',
     resultData: mock,
     "resultDesc": "四季严选商品详情数据哟"
+  });
+  //关闭请求
+  res.end();
+});
+
+/* 加入购物车 */
+router.post('/addCart', function(req, res, next) {
+  var _data = req.body,
+    mock = null;
+  if (_data.error) {
+    notifierMsg.errorMsg(res);
+    return false;
+  }
+
+  mock = Mock.mock({});
+
+  //返回结果给ajax
+  res.send({
+    'resultCode':'0',
+    resultData: mock,
+    "resultDesc": "加入购物车成功啦"
+  });
+  //关闭请求
+  res.end();
+});
+
+/* 获取购物车数量 */
+router.post('/getCartAmont', function(req, res, next) {
+  var _data = req.body,
+    mock = null;
+  if (_data.error) {
+    notifierMsg.errorMsg(res);
+    return false;
+  }
+
+  mock = Mock.mock({
+    count: 11
+  });
+
+  //返回结果给ajax
+  res.send({
+    'resultCode':'0',
+    resultData: mock,
+    "resultDesc": "加入购物车成功啦"
   });
   //关闭请求
   res.end();
