@@ -343,7 +343,7 @@ router.post('/getCartAmont', function(req, res, next) {
   }
 
   mock = Mock.mock({
-    count: 11
+    count: 89
   });
 
   //返回结果给ajax
