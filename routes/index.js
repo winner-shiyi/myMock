@@ -325,9 +325,9 @@ router.post('/addCart', function(req, res, next) {
 
   //返回结果给ajax
   res.send({
-    'resultCode':'0',
+    'resultCode':'11',
     resultData: mock,
-    "resultDesc": "加入购物车成功啦"
+    "resultDesc": "商品售罄啦"
   });
   //关闭请求
   res.end();
