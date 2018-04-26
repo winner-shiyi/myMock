@@ -195,7 +195,7 @@ router.post('/addCart', function (req, res, next) {
 
     //返回结果给ajax
     res.send({
-        'resultCode': '11',
+        'resultCode': '0',
         resultData: mock,
         "resultDesc": "商品售罄啦"
     });
@@ -227,7 +227,7 @@ router.post('/getCartAmont', function (req, res, next) {
 });
 
 /* 购物车列表 */
-router.post('/getCartAmont', function (req, res, next) {
+router.post('/cartDetail', function (req, res, next) {
     var _data = req.body,
         mock = null;
     if (_data.error) {
@@ -242,6 +242,8 @@ router.post('/getCartAmont', function (req, res, next) {
         "shopList": [
             {
                 "shopName": "四季青店",
+                "isLose": false,
+                "shopStatus": "1",
                 "skuList": [
                     {
                         "spuId": "530000197908167202",
@@ -249,6 +251,10 @@ router.post('/getCartAmont', function (req, res, next) {
                             {
                                 "specName": "规格",
                                 "specValue": "8只装"
+                            },
+                            {
+                                "specName": "重量",
+                                "specValue": "100g"
                             }
                         ],
                         "usableNum": 10,
@@ -257,7 +263,108 @@ router.post('/getCartAmont', function (req, res, next) {
                         "isFreeDelivery": true,
                         "skuNumber": 2,
                         "sellingPrice": 6,
+                        "invalidStatus": "3",
+                        "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180410/201804101411200.jpg"
+                    },
+                    {
+                        "spuId": "530000197908167211",
+                        "skuSpecDesc": [
+                            {
+                                "specName": "规格",
+                                "specValue": "16只装"
+                            }
+                        ],
+                        "usableNum": 15,
+                        "skuId": "5300001999012545",
+                        "spuName": "不二家棒棒糖水果牛奶味不二家棒棒糖水果牛奶味",
+                        "isFreeDelivery": true,
+                        "skuNumber": 10,
+                        "sellingPrice": 60,
                         "invalidStatus": "0",
+                        "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180410/201804101411200.jpg"
+                    }
+                ],
+                "shopId": "410000201112029447"
+            },
+            {
+                "shopName": "近江苏堤店",
+                "isLose": false,
+                "shopStatus": "0",
+                "skuList": [
+                    {
+                        "spuId": "53000019713346",
+                        "skuSpecDesc": [
+                            {
+                                "specName": "口味",
+                                "specValue": "热带水果味"
+                            }
+                        ],
+                        "usableNum": 10,
+                        "skuId": "530000199901253115",
+                        "spuName": "超级无敌好吃的水果味棒棒糖",
+                        "isFreeDelivery": true,
+                        "skuNumber": 2,
+                        "sellingPrice": 6,
+                        "invalidStatus": "0",
+                        "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180313/201803131732060.jpg"
+                    },
+                    {
+                        "spuId": "530000197908167211",
+                        "skuSpecDesc": [
+                            {
+                                "specName": "规格",
+                                "specValue": "1000g/个"
+                            }
+                        ],
+                        "usableNum": 15,
+                        "skuId": "5300001999012545",
+                        "spuName": "泰国金柚大果约1000g/个",
+                        "isFreeDelivery": true,
+                        "skuNumber": 10,
+                        "sellingPrice": 60,
+                        "invalidStatus": "0",
+                        "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180410/201804101202510.jpg"
+                    }
+                ],
+                "shopId": "410000201797898"
+            },
+            {
+                "shopName": "四季青店",
+                "shopStatus": "0",
+                "isLose": true,
+                "skuList": [
+                    {
+                        "spuId": "5300001979013458",
+                        "skuSpecDesc": [
+                            {
+                                "specName": "规格",
+                                "specValue": "16个/箱"
+                            }
+                        ],
+                        "usableNum": 0,
+                        "skuId": "53000019997511",
+                        "spuName": "售罄的商品---菠萝",
+                        "isFreeDelivery": true,
+                        "skuNumber": 10,
+                        "sellingPrice": 60,
+                        "invalidStatus": "2",
+                        "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180410/201804101411200.jpg"
+                    },
+                    {
+                        "spuId": "53000019790814761",
+                        "skuSpecDesc": [
+                            {
+                                "specName": "规格",
+                                "specValue": "300g/箱"
+                            }
+                        ],
+                        "usableNum": 0,
+                        "skuId": "530000199901789",
+                        "spuName": "下架的商品--橙子",
+                        "isFreeDelivery": true,
+                        "skuNumber": 10,
+                        "sellingPrice": 60,
+                        "invalidStatus": "1",
                         "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180410/201804101411200.jpg"
                     }
                 ],
@@ -270,7 +377,7 @@ router.post('/getCartAmont', function (req, res, next) {
     res.send({
         'resultCode': '0',
         resultData: mock,
-        "resultDesc": "加入购物车成功啦"
+        "resultDesc": "购物车列表页"
     });
     //关闭请求
     res.end();
