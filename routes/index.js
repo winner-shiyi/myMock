@@ -243,7 +243,7 @@ router.post('/cartDetail', function (req, res, next) {
             {
                 "shopName": "四季青店",
                 "isLose": false,
-                "shopStatus": "1",
+                "shopStatus": "0",
                 "skuList": [
                     {
                         "spuId": "530000197908167202",
@@ -267,7 +267,7 @@ router.post('/cartDetail', function (req, res, next) {
                         "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180410/201804101411200.jpg"
                     },
                     {
-                        "spuId": "530000197908167211",
+                        "spuId": "530000197908133367211",
                         "skuSpecDesc": [
                             {
                                 "specName": "规格",
@@ -297,6 +297,10 @@ router.post('/cartDetail', function (req, res, next) {
                             {
                                 "specName": "口味",
                                 "specValue": "热带水果味"
+                            },
+                            {
+                                "specName": "口味",
+                                "specValue": "田园风味"
                             }
                         ],
                         "usableNum": 10,
