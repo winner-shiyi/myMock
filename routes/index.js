@@ -304,7 +304,7 @@ router.post('/cartDetail', function (req, res, next) {
                         "spuName": "超级无敌好吃的水果味棒棒糖",
                         "isFreeDelivery": true,
                         "skuNumber": 2,
-                        "sellingPrice": 6,
+                        "sellingPrice": 100,
                         "invalidStatus": "0",
                         "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180313/201803131732060.jpg"
                     },
@@ -321,7 +321,7 @@ router.post('/cartDetail', function (req, res, next) {
                         "spuName": "泰国金柚大果约1000g/个",
                         "isFreeDelivery": true,
                         "skuNumber": 10,
-                        "sellingPrice": 60,
+                        "sellingPrice": 200,
                         "invalidStatus": "0",
                         "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180410/201804101202510.jpg"
                     }
