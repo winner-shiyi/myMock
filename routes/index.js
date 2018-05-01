@@ -36,46 +36,25 @@ router.post('/spuDetail', function (req, res, next) {
                         {
                             "specValue": "8只装",
                         },
-                        {
-                            "specValue": "16只装"
-                        }
+                        // {
+                        //     "specValue": "16只装"
+                        // }
                     ]
                 },
-                {
-                    "specName": "颜色",
-                    "specId": "450000201301152581",
-                    "valueList": [
-                        {
-                            "specValue": "红色"
-                        },
-                        {
-                            "specValue": "黑色"
-                        }
-                    ]
-                }
+                // {
+                //     "specName": "颜色",
+                //     "specId": "450000201301152581",
+                //     "valueList": [
+                //         {
+                //             "specValue": "红色"
+                //         },
+                //         {
+                //             "specValue": "黑色"
+                //         }
+                //     ]
+                // }
             ],
-            "goodsDetails": [
-                {
-                    "key": "产地",
-                    "value": "杭州"
-                },
-                {
-                    "key": "产地",
-                    "value": "杭州"
-                },
-                {
-                    "key": "产地",
-                    "value": "杭州"
-                },
-                {
-                    "key": "产地",
-                    "value": "杭州"
-                },
-                {
-                    "key": "产地",
-                    "value": "杭州"
-                }
-            ],
+            "goodsDetails": [],
             "spuId": "320000200309088655",
             "shop": {
                 "shopId": "540000197208288742",
@@ -91,80 +70,80 @@ router.post('/spuDetail', function (req, res, next) {
             "skuList": [
                 {
                     "sellingPrice": 10,
-                    "quantity": 0,
+                    "quantity": 6,
                     "specList": [
                         {
                             "specId": "450000201301152580",
                             "specValue": "8只装",
                             "specName": "重量"
                         },
-                        {
-                            "specId": "450000201301152581",
-                            "specValue": "红色",
-                            "specName": "重量"
-                        }
+                        // {
+                        //     "specId": "450000201301152581",
+                        //     "specValue": "红色",
+                        //     "specName": "重量"
+                        // }
                     ],
                     "skuId": "skuId1",
-                    "skuDesc": "8只装,红色",
+                    "skuDesc": "8只装",
                     "skuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
                 },
-                {
-                    "sellingPrice": 20,
-                    "quantity": 10,
-                    "specList": [
-                        {
-                            "specId": "450000201301152580",
-                            "specValue": "16只装",
-                            "specName": "重量"
-                        },
-                        {
-                            "specId": "450000201301152581",
-                            "specValue": "红色",
-                            "specName": "重量"
-                        }
-                    ],
-                    "skuId": "skuId2",
-                    "skuDesc": "16只装,红色",
-                    "skuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180326/201803261017392.jpg"
-                },
-                {
-                    "sellingPrice": 30,
-                    "quantity": 0,
-                    "specList": [
-                        {
-                            "specId": "450000201301152580",
-                            "specValue": "8只装",
-                            "specName": "重量"
-                        },
-                        {
-                            "specId": "450000201301152581",
-                            "specValue": "黑色",
-                            "specName": "重量"
-                        }
-                    ],
-                    "skuId": "skuId3",
-                    "skuDesc": "8只装,黑色",
-                    "skuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180326/201803261017393.jpg"
-                },
-                {
-                    "sellingPrice": 40,
-                    "quantity": 10,
-                    "specList": [
-                        {
-                            "specId": "450000201301152580",
-                            "specValue": "16只装",
-                            "specName": "重量"
-                        },
-                        {
-                            "specId": "450000201301152581",
-                            "specValue": "黑色",
-                            "specName": "重量"
-                        }
-                    ],
-                    "skuId": "skuId4",
-                    "skuDesc": "16只装,黑色",
-                    "skuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
-                }
+                // {
+                //     "sellingPrice": 20,
+                //     "quantity": 10,
+                //     "specList": [
+                //         {
+                //             "specId": "450000201301152580",
+                //             "specValue": "16只装",
+                //             "specName": "重量"
+                //         },
+                //         {
+                //             "specId": "450000201301152581",
+                //             "specValue": "红色",
+                //             "specName": "重量"
+                //         }
+                //     ],
+                //     "skuId": "skuId2",
+                //     "skuDesc": "16只装,红色",
+                //     "skuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180326/201803261017392.jpg"
+                // },
+                // {
+                //     "sellingPrice": 30,
+                //     "quantity": 0,
+                //     "specList": [
+                //         {
+                //             "specId": "450000201301152580",
+                //             "specValue": "8只装",
+                //             "specName": "重量"
+                //         },
+                //         {
+                //             "specId": "450000201301152581",
+                //             "specValue": "黑色",
+                //             "specName": "重量"
+                //         }
+                //     ],
+                //     "skuId": "skuId3",
+                //     "skuDesc": "8只装,黑色",
+                //     "skuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180326/201803261017393.jpg"
+                // },
+                // {
+                //     "sellingPrice": 40,
+                //     "quantity": 10,
+                //     "specList": [
+                //         {
+                //             "specId": "450000201301152580",
+                //             "specValue": "16只装",
+                //             "specName": "重量"
+                //         },
+                //         {
+                //             "specId": "450000201301152581",
+                //             "specValue": "黑色",
+                //             "specName": "重量"
+                //         }
+                //     ],
+                //     "skuId": "skuId4",
+                //     "skuDesc": "16只装,黑色",
+                //     "skuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180409/201804090938561.jpg"
+                // }
 
             ],
             "spuName": "湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒湖北秭归伦晚脐橙1kg/盒",
@@ -246,7 +225,7 @@ router.post('/cartDetail', function (req, res, next) {
                 "shopStatus": "0",
                 "skuList": [
                     {
-                        "spuId": "530000197908167202",
+                        "spuId": "5301",
                         "skuSpecDesc": [
                             {
                                 "specName": "规格",
@@ -258,7 +237,7 @@ router.post('/cartDetail', function (req, res, next) {
                             }
                         ],
                         "usableNum": 10,
-                        "skuId": "530000199901253115",
+                        "skuId": "530110",
                         "spuName": "不二家棒棒糖水果牛奶味不二家棒棒糖水果牛奶味",
                         "isFreeDelivery": true,
                         "skuNumber": 2,
@@ -267,7 +246,7 @@ router.post('/cartDetail', function (req, res, next) {
                         "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180410/201804101411200.jpg"
                     },
                     {
-                        "spuId": "530000197908133367211",
+                        "spuId": "5301",
                         "skuSpecDesc": [
                             {
                                 "specName": "规格",
@@ -275,7 +254,7 @@ router.post('/cartDetail', function (req, res, next) {
                             }
                         ],
                         "usableNum": 15,
-                        "skuId": "5300001999012545",
+                        "skuId": "530120",
                         "spuName": "不二家棒棒糖水果牛奶味不二家棒棒糖水果牛奶味",
                         "isFreeDelivery": true,
                         "skuNumber": 10,
@@ -284,7 +263,7 @@ router.post('/cartDetail', function (req, res, next) {
                         "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180410/201804101411200.jpg"
                     }
                 ],
-                "shopId": "410000201112029447"
+                "shopId": "100"
             },
             {
                 "shopName": "近江苏堤店",
@@ -292,7 +271,7 @@ router.post('/cartDetail', function (req, res, next) {
                 "shopStatus": "0",
                 "skuList": [
                     {
-                        "spuId": "53000019713346",
+                        "spuId": "5302",
                         "skuSpecDesc": [
                             {
                                 "specName": "口味",
@@ -304,7 +283,7 @@ router.post('/cartDetail', function (req, res, next) {
                             }
                         ],
                         "usableNum": 10,
-                        "skuId": "530000199901253115",
+                        "skuId": "530210",
                         "spuName": "超级无敌好吃的水果味棒棒糖",
                         "isFreeDelivery": true,
                         "skuNumber": 2,
@@ -313,7 +292,7 @@ router.post('/cartDetail', function (req, res, next) {
                         "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180313/201803131732060.jpg"
                     },
                     {
-                        "spuId": "530000197908167211",
+                        "spuId": "5302",
                         "skuSpecDesc": [
                             {
                                 "specName": "规格",
@@ -321,7 +300,7 @@ router.post('/cartDetail', function (req, res, next) {
                             }
                         ],
                         "usableNum": 15,
-                        "skuId": "5300001999012545",
+                        "skuId": "530220",
                         "spuName": "泰国金柚大果约1000g/个",
                         "isFreeDelivery": true,
                         "skuNumber": 10,
@@ -330,7 +309,7 @@ router.post('/cartDetail', function (req, res, next) {
                         "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180410/201804101202510.jpg"
                     }
                 ],
-                "shopId": "410000201797898"
+                "shopId": "1001"
             },
             {
                 "shopName": "四季青店",
@@ -372,7 +351,7 @@ router.post('/cartDetail', function (req, res, next) {
                         "spuImage": "http://res.neosjyx.com/resource/images/photo/7043/20180410/201804101411200.jpg"
                     }
                 ],
-                "shopId": "410000201112029447"
+                "shopId": "100"
             }
         ]
     });
@@ -387,8 +366,112 @@ router.post('/cartDetail', function (req, res, next) {
     res.end();
 });
 
+/* 删除购物车 */
+router.post('/deleteCartSku', function (req, res, next) {
+    var _data = req.body,
+        mock = null;
+    if (_data.error) {
+        notifierMsg.errorMsg(res);
+        return false;
+    }
 
+    mock = Mock.mock({
+    });
 
+    //返回结果给ajax
+    res.send({
+        'resultCode': '0',
+        resultData: mock,
+        "resultDesc": "删除购物车成功啦"
+    });
+    //关闭请求
+    res.end();
+});
+
+ 
+/* 更新购物车sku数量 */
+router.post('/updateCartSkuAmount', function (req, res, next) {
+    var _data = req.body,
+        mock = null;
+    if (_data.error) {
+        notifierMsg.errorMsg(res);
+        return false;
+    }
+
+    mock = Mock.mock({
+    });
+
+    //返回结果给ajax
+    res.send({
+        'resultCode': '0',
+        resultData: mock,
+        "resultDesc": "更新购物车sku数量成功啦"
+    });
+    //关闭请求
+    res.end();
+});
+
+/* 购物车结算 */
+router.post('/cartConfirm', function (req, res, next) {
+    var _data = req.body,
+        mock = null;
+    if (_data.error) {
+        notifierMsg.errorMsg(res);
+        return false;
+    }
+
+    mock = Mock.mock(
+        {
+            "productTotalCount": 900,
+            "shopList": [
+                {
+                    "skuList":[
+                    {
+                        "skuNumber": 10,
+                        "usableNum": 100,
+                        "spuId": "810000197904288311",
+                        "skuSpecDesc":[
+                        {
+                            "specName": "口味",
+                            "specValue": "红烧排骨味"
+                        }
+                        ],
+                        "spuName": "超级无敌好吃的水果糖",
+                        "invalidStatus": "0",
+                        "sellingPrice": 600,
+                        "spuImage": "测试内容9vj7",
+                        "skuId": "420000197608016095"
+                    }
+                    ],
+                    "shopId": "360000198505148579",
+                    "shopName": "四季严选近江店"
+                }
+            ],
+            "payPrice": 2100,
+            "logisticsFee": 100,
+            "address": {
+            "province": "福建",
+            "adcode": 30142,
+            "city": "武夷山",
+            "addressId": "500000197903073017",
+            "district": "建阳",
+            "phone": "15880274595",
+            "detailAddress": "童游小学",
+            "name": "魏娜"
+            },
+            "productAmountTotal": 2000
+        }
+    );
+
+    //返回结果给ajax
+    res.send({
+        'resultCode': '0',
+        resultData: mock,
+        "resultDesc": "购物车结算成功啦"
+    });
+    //关闭请求
+    res.end();
+});
 
 
 
